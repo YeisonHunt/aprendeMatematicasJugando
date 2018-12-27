@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Dados</title>
+
+    <meta name="description" content="Una Progressive Web App de dados.">
+    <meta name="author" content="Juan Garmendia">
+    <meta name="keywords" content="dados pwa">
+    <meta name="robots" content="all">
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" type="image/x-icon" href="media/icons/favicon_dado.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Dados" />
+    <link rel="apple-touch-icon" href="media/icons/dado_icon_152.png" />
+
+    <meta
+      name="msapplication-TileImage"
+      content="media/icons/dado_icon_144.png"
+    />
+    <meta name="msapplication-TileColor" content="#048d04" />
+  </head>
+  <body>
+    <header class="header"></header>
+    <!-- Main -->
+    <main id="main" class="main">
+      <!-- Player-->
+      <div id="player-container">
+        <audio
+          id="player"
+          src="media/midi_lst.mp3"
+          type="audio/mpeg"
+          preload="auto"
+        >
+          <p>Tu navegador no implementa el elemento audio.</p>
+        </audio>
+      </div>
+      <!-- Contador-->
+      <div class="contador-container">
+        <div id="contador" class="contador"><h2 id="luck"></h2></div>
+      </div>
+      <!-- Dice-->
+      <div id="dice-container" class="dice-container">
+        <div id="dice" class="sprite start dado_0"></div>
+      </div>
+      <!-- Options-->
+      <div class="option option-container" hidden>
+        <button
+          id="option_0"
+          class="option option-btn"
+          type="button"
+          name="Upgrades"
+          hidden
+        >
+          Upgrades
+        </button>
+        <button
+          id="option_1"
+          class="option option-btn"
+          type="button"
+          name="DLCs"
+          hidden
+        >
+          DLCs
+        </button>
+        <button
+          id="option_2"
+          class="option option-btn"
+          type="button"
+          name="interrogación"
+          hidden
+        >
+          ???
+        </button>
+      </div>
+      <!-- Ventanas-->
+      <div id="upgrades" class="ventana upgrade-vent">
+        <button class="volver-btn">Volver</button>
+        <div id="upgrades-container" class="upgrades-container">
+          <!-- Upgrades-->
+          <div id="upgrade_0" class="upgrade"></div>
+          <div id="upgrade_1" class="upgrade"></div>
+          <div id="upgrade_2" class="upgrade"></div>
+        </div>
+      </div>
+      <div id="dlc" class="ventana dlc-vent">
+        <button class="volver-btn">Volver</button>
+        <div id="dlcs-container" class="dlcs-container">
+          <!-- DLCs-->
+          <h1>Coming sooooooooooon</h1>
+          <div id="dlc_0" class="dlc">
+            <h2>Pirinola</h2>
+            <p>
+              Todos todan. Esa cosa que gira como trompo.
+              <span>[imagen de una pirinola pirinoleando.]</span>
+            </p>
+            <ul>
+              <li>luck +2</li>
+              <li>wisdom +1</li>
+            </ul>
+          </div>
+          <div id="dlc_1" class="dlc">
+            <h2>Dado 2</h2>
+            <p>
+              El mismo dado, pero el sombrero es diferente.
+              <span>[cool dice with fedora img.]</span>
+            </p>
+            <ul>
+              <li>def +3</li>
+              <li>bkn +1</li>
+            </ul>
+          </div>
+          <div id="dlc_2" class="dlc">
+            <h2>Cuy de la suerte</h2>
+            <p>
+              Mágico roedor que anuncia tempestad. Algunos malas lenguas dicen
+              que la tómbola está arreglada.
+              <span>[img cuy eligiendo el n°12 como siempre]</span>
+            </p>
+            <ul>
+              <li>atk +7</li>
+              <li>crit +1</li>
+              <li>Guatón +10</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="misterio" class="ventana misterio-vent">
+        <button class="volver-btn">Volver</button>
+        <div id="misterio-container" class="misterio-container">
+          <div id="mst_0" class="mst">
+            <p>
+              Profesor: Guru, Guuuruuuu!!! <br />
+              Creo que ya no estamos en la
+              <span class="mst-lugar">Mansión de los Lujos.</span>
+            </p>
+            <p class="mst-alert">Requiere nivel 2 para continuar.</p>
+            <button class="mst-btn" disabled>Continuar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
