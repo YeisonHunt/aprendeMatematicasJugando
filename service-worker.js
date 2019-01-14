@@ -11,13 +11,26 @@ var cacheName = 'dados-a-02';
 
 // lista de archivos necesarios para la shell app (index, js, imagenes,css, etc)
 var filesToCache = [
-    '/',
-    '/index.html',
-    '/app.js',
-    '/style.css',
-    '/media/dados_sprite01.png',
-    '/media/midi_lst.mp3'
+    'dados/',
+    'dados/index.html',
+    'dados/app.js',
+    'dados/style.css',
+    'dados/media/dados_sprite01.png',
+    'dados/media/midi_lst.mp3'
 ];
+
+/*
+// LOCAL (dev)
+// cambiar start_url tambien
+var filesToCache = [
+  '/',
+  '/index.html',
+  '/app.js',
+  '/style.css',
+  '/media/dados_sprite01.png',
+  '/media/midi_lst.mp3'
+];
+*/
 
 // Instalación
 // se abre cache y se da un nombre con caches.open()

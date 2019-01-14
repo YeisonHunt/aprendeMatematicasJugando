@@ -23,7 +23,7 @@
         "sizes": "256x256",
         "type": "image/png"
       }],
-    "start_url": "/index.html",
+    "start_url": "dados/index.html",
     "display": "standalone",
     "background_color": "#008c41",
     "theme_color": "#048d04"
