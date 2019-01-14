@@ -6,7 +6,8 @@
 
 // nombre del cache actual
 // IMPORTANTE !!!  (se debe cambiar el nombre por cada cambio)
-var cacheName = 'dados-a-01';
+//var cacheName = 'dados-a-01';
+var cacheName = 'dados-a-02';
 
 // lista de archivos necesarios para la shell app (index, js, imagenes,css, etc)
 var filesToCache = [

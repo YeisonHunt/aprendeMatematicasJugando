@@ -7,13 +7,17 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Dados</title>
 
-    <meta name="description" content="Una Progressive Web App de dados.">
-    <meta name="author" content="Juan Garmendia">
-    <meta name="keywords" content="dados pwa">
-    <meta name="robots" content="all">
+    <meta name="description" content="Una Progressive Web App de dados." />
+    <meta name="author" content="Juan Garmendia" />
+    <meta name="keywords" content="Progressive Web App, dados, clicker, dice" />
+    <meta name="robots" content="all" />
 
     <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" type="image/x-icon" href="media/icons/favicon_dado.ico"/>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="media/icons/favicon_dado.ico"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="Dados" />
@@ -24,6 +28,21 @@
       content="media/icons/dado_icon_144.png"
     />
     <meta name="msapplication-TileColor" content="#048d04" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-128370313-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-128370313-2");
+    </script>
   </head>
   <body>
     <header class="header"></header>
