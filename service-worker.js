@@ -6,8 +6,8 @@
 
 // nombre del cache actual
 // IMPORTANTE !!!  (se debe cambiar el nombre por cada cambio)
-//var cacheName = 'dados-a-02';
-var cacheName = 'dados-a-03';
+//var cacheName = 'dados-a-03';
+var cacheName = 'dados-a-04';
 
 // lista de archivos necesarios para la shell app (index, js, imagenes,css, etc)
 // para github pages, se mepieza con el nombre del repositorio
