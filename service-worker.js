@@ -7,7 +7,8 @@
 // nombre del cache actual
 // IMPORTANTE !!!  (se debe cambiar el nombre por cada cambio)
 //var cacheName = 'dados-a-03';
-var cacheName = 'dados-a-04';
+const CACHE_VERSION = "dados-v4";
+const CACHE_NAME = `${registration.scope}!${CACHE_VERSION}`;
 
 // lista de archivos necesarios para la shell app (index, js, imagenes,css, etc)
 // para github pages, se mepieza con el nombre del repositorio
@@ -49,20 +50,28 @@ self.addEventListener('install', function(e) {
 // Activación
 // se inicia, cuando se inicia el service worker.
 // se actualiza el cache cada vez que se cambie el cacheName
-self.addEventListener('activate', function(e) {
-    console.log('[ServiceWorker] Activate');
-    e.waitUntil(
-      caches.keys().then(function(keyList) {
-        return Promise.all(keyList.map(function(key) {
-          if (key !== cacheName) {
-            console.log('[ServiceWorker] Removing old cache', key);
-            return caches.delete(key);
-          }
-        }));
+self.addEventListener("activate", event => {
+  console.log('[ServiceWorker] Activate');
+  const currentCaches = CACHE_NAME;
+  event.waitUntil(
+    caches
+      .keys()
+      .then(cacheNames => {
+        return cacheNames.filter(
+          cacheName => !currentCaches.includes(cacheName)
+        );
       })
-    );
-    return self.clients.claim();
-  });
+      .then(cachesToDelete => {
+        return Promise.all(
+          cachesToDelete.map(cacheToDelete => {
+            console.log('[ServiceWorker] Removing old cache', cacheToDelete);
+            return caches.delete(cacheToDelete);
+          })
+        );
+      })
+      .then(() => self.clients.claim())
+  );
+});
 
 // Fetch
 // intercepta las solicitudes de la PWA para controlarlas con el service worker.
