@@ -7,7 +7,7 @@
 // nombre del cache actual
 // IMPORTANTE !!!  (se debe cambiar el nombre por cada cambio)
 //var cacheName = 'dados-a-03';
-const CACHE_VERSION = "dados-v4";
+const CACHE_VERSION = "dados-v4a";
 const CACHE_NAME = `${registration.scope}!${CACHE_VERSION}`;
 
 // lista de archivos necesarios para la shell app (index, js, imagenes,css, etc)
@@ -40,7 +40,7 @@ var filesToCache = [
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
   e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
+    caches.open(CACHE_NAME).then(function(cache) {
       console.log('[ServiceWorker] Caching app shell');
       return cache.addAll(filesToCache);
     })
